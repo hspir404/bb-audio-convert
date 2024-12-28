@@ -1,0 +1,39 @@
+.{
+    .name = "bb-audio",
+    // This is a [Semantic Version](https://semver.org/).
+    // In a future version of Zig it will be used for package deduplication.
+    .version = "0.0.0",
+
+    // This field is optional.
+    // This is currently advisory only; Zig does not yet do anything
+    // with this value.
+    //.minimum_zig_version = "0.11.0",
+
+    // This field is optional.
+    // Each dependency must either provide a `url` and `hash`, or a `path`.
+    // `zig build --fetch` can be used to fetch all dependencies of a package, recursively.
+    // Once all dependencies are fetched, `zig build` no longer requires
+    // internet connectivity.
+    .dependencies = .{
+        .libatrac9 = .{
+            .url = "git+https://github.com/Thealexbarney/LibAtrac9#7406e447c05bb5a99b8c8b22ab747c5a220c6ea3",
+            .hash = "1220668e9b90028255fac92d76ca64b50dc25bd9a1be4e8da2da8cd839878a9c2865",
+        },
+        .libmp3lame = .{
+            .url = "git+https://github.com/allyourcodebase/libmp3lame?ref=3.100.1-4#c46b5ba1e5c819b9a1c6a70cc81a499339d7ca64",
+            .hash = "1220da08eac618097d61be76506ddb71ecee9e76cb709a36b761c248262057846670",
+        },
+        // .lame = .{
+        //     .url = "https://downloads.sourceforge.net/lame/lame-3.100.tar.gz",
+        //     .hash = "12207d3e20b2df16ce71c77ac50e4a9b5d27f04c2ca6d94f935ba1bfab5fb48077c0",
+        // },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        // For example...
+        //"LICENSE",
+        //"README.md",
+    },
+}
